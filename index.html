@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,600;0,700;0,900;1,100;1,300;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>Mortgage Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form-container">
+        <div class="form__inputBlocks">
+          <label>Home Price $</label>
+          <input
+            id="amount"
+            name="price"
+            type="number"
+            pattern="[0-9]"
+            value="330000"
+            min="0"
+            max="3000000"
+            oninput="rangeInput.value=amount.value"
+            class="form__textInput"
+          />
+          <input
+            id="rangeInput"
+            name="price"
+            type="range"
+            value="330000"
+            min="0"
+            max="3000000"
+            oninput="amount.value=rangeInput.value"
+            class="form__rangeSlider"
+            step="1"
+          />
+        </div>
+        <div class="form__inputBlocks">
+          <label>Down Payment $</label>
+          <input
+            type="number"
+            name="down_payment"
+            value="66000"
+            class="form__textInput"
+          />
+        </div>
+        <div class="form__inputBlocks">
+          <label>Length of loan</label>
+          <select name="loan_term" class="form__selectInput">
+            <option value="30">30 years</option>
+            <option value="20">20 years</option>
+            <option value="15">15 years</option>
+            <option value="10">10 years</option>
+          </select>
+        </div>
+        <label>Interest Rate</label>
+        <input
+          type="number"
+          name="interest_rate"
+          value="3.050"
+          class="form__textInput"
+        />
+        <label>Annual Homeowner's Insurance</label>
+        <input
+          type="number"
+          name="home_insurance"
+          value="792"
+          class="form__textInput"
+        />
+        <label>Annual Property Tax</label>
+        <input
+          type="number"
+          name="property_tax"
+          value="2604"
+          class="form__textInput"
+        />
+        <label>Annual HOA Fees</label>
+        <input type="numb" name="hoa" value="0" class="form__textInput" />
+      </form>
+
+      <div class="chart-container">
+        <div class="chart">
+          <h2 class="chart__title">Mortgage Calculator</h2>
+          <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+        <form class="form-container">
+          <div class="form__inputBlocks">
+            <label>Total: $</label>
+            <span class="result--monthlyTotal form__displayResult">270000</span>
+          </div>
+          <div class="form__inputBlocks">
+            <label>Principle & Interest</label>
+            <span
+              class="result--monthlyPrincipleAndInterest form__displayResult"
+              >1120.17</span
+            >
+          </div>
+          <div class="form__inputBlocks">
+            <label>HOA</label>
+            <span class="result--monthlyHOA form__displayResult">0.00</span>
+          </div>
+          <div class="form__inputBlocks">
+            <label>Homeowner's Insurance</label>
+            <span class="result--monthlyHomeInsurance form__displayResult"
+              >66.00</span
+            >
+          </div>
+          <div class="form__inputBlocks">
+            <label>Property Tax</label>
+            <span class="result--monthlyPropertyTax form__displayResult"
+              >217.00</span
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

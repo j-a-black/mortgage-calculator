@@ -1,0 +1,101 @@
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: whitesmoke;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/background.jpg");
+  background-size: cover;
+}
+
+.container {
+  /* border: 1px solid orange; */
+  margin: 0 auto;
+  padding-top: 1rem;
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-container {
+  background-color: #f6f8f8;
+  border: 1px solid #555;
+  border-radius: 1rem;
+  width: 98%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.chart {
+  width: 300px;
+  margin-bottom: 1rem;
+}
+
+.chart__title {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  color: #1e3799;
+}
+
+.form-container {
+  background-color: #f6f8f8;
+  border: 1px solid #555;
+  border-radius: 1rem;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-container > * {
+  margin-bottom: 1rem;
+}
+
+.form__inputBlocks {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__inputBlocks > * {
+  margin-bottom: 0.7rem;
+}
+
+.form__textInput,
+.form__selectInput {
+  border: 1px solid lightgray;
+  font-size: 1.4rem;
+  letter-spacing: 0.01rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 3px 3px 3px lightgray;
+  font-family: "Raleway", sans-serif;
+}
+
+.form__displayResult {
+  font-size: 1.4rem;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .chart-container {
+    max-width: 500px;
+  }
+
+  .form-container {
+    width: 450px;
+  }
+}
